@@ -1,0 +1,166 @@
+this is a learn notes for Git 
+
+configuration file 
+1. /etc/gitconfig : for system
+> git config --system
+2. ~/.gitconfig or ~/.config/git/config : for current user
+> git config --global
+3. repo/.git/config : for current repo
+> git config
+set a editor for commit message
+> git config core.editor vim
+
+two ways for help
+> git help <verb>      <=== this is a verbose way
+> git <verb> -h    
+
+
+add file to be staged and for the next commit
+> git add <file>
+
+
+remvoe a cached file/ stop tracking a file 
+> git rm --cached <file>
+
+undo remove 
+> git checkout HEAD <file>
+
+
+reanme a file
+> git mv oldname newname
+
+undo a change not commited
+> git checkout -- <file>
+
+unadd a file
+> git reset HEAD <file>
+
+
+check status
+> git status		<==== verbose
+> git status -s
+
+ignore some file
+> cat .gitignore
+
+# for comment
+
+
+
+see the difference between files modified and file staged
+> git diff
+
+see the difference between files staged and last commit
+> git diff --staged
+or 
+> git diff --cached
+
+
+a quick way to commit and auto add file for commit
+> git commit -a -m "message"
+
+commmit history
+> git log -p -2
+
+p for patch format, diff info
+2 for last two commits
+
+
+add remote repo and tag a alias
+> git remote add <shortname> <url>
+
+fetch files which are not local
+> git fetch <remote>
+
+push to remote repo
+> git push <remote> <branch>
+
+show remote repo
+> git remote show <remote>
+
+rename remote repo
+> git remote rename old new
+
+remove remote repo
+> git remote rm <remote>
+
+
+two tags: lightweight or annotated
+> git tag -a <tag> -m "message"
+> git tag <tag>
+
+tag a commit
+> git tag -a <tag> commit-hash-7bytes
+
+list all tags
+> git tag
+
+share tag to remote repo
+> git push origin <tag>
+> git push origin --tags
+
+delete local tags
+> git tag -d <tag>
+
+delete remote tags
+> git push origin --delete <tag>
+
+check out tag
+> git checkout <tag>
+
+
+alias for git commands
+> git config --global alias.** command
+
+> git config --global alias.ci commit
+> git config --global alias.st status
+> git config --global alias.co checkout
+> git config --global alias.br branch
+
+
+BRANCH
+
+HEAD is the location on a branch
+
+creat a new branch
+> git branch <name>
+
+switch to a branch
+> git checkout <name>
+
+quick creat and switch
+> git checkout -b <new>
+
+look fork history
+> git log --oneline --decorate --graph --all
+
+
+merge management
+> git merge <branch>
+
+solve conflicts
+> edit the files which have conflicts
+> git commit
+
+list all branches
+> git branch
+> git branch --merged
+> git branch --no-merged
+
+delete branche
+> git branch -d <name>
+> git branch -D <name>
+
+clone a remote branch
+> git clone <url>
+
+add a remote branch
+> git remote add <url>
+origin/master is a remote branch, origin is a alias for remote url
+master is your local branch
+
+fetch from remote
+> git fetch origin
+
+push a local branch to remote branch
+> git push <remote> <branch>
