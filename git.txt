@@ -162,5 +162,18 @@ master is your local branch
 fetch from remote
 > git fetch origin
 
+merge with remote branch
+> git merge orgin/<branch>
+
 push a local branch to remote branch
-> git push <remote> <branch>
+> git push origin <branch>
+
+track remote branch
+> git checkout -b <branch> origin/<branch>
+
+if you have no local branch whose name is same with your target remote branch, just
+> git checkout <branch>
+
+set a different name for tracking remote branch
+> git checkout -b <alias> origin/<branch>
+
